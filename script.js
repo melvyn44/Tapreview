@@ -15,8 +15,3 @@ document.querySelectorAll('.nav a').forEach(link => {
 
 const form = document.getElementById('quoteForm');
 const statusMessage = document.getElementById('formStatus');
-
-form.addEventListener('submit', event => {
-  event.preventDefault();
-  statusMessage.textContent = "Formulaire prêt : reliez-le à Formspree, SumUp ou votre adresse e-mail pour recevoir les demandes.";
-});
