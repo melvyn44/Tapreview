@@ -2,15 +2,11 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta
         name="description"
-        content="Découvrez TapReview, une entreprise française basée à Saint-Nazaire qui propose des supports NFC et QR Code pour faciliter la collecte d'avis Google."
+        content="Découvrez l'histoire de TapReview, son fondateur et les valeurs de l'entreprise."
     >
 
     <title>À propos de nous | TapReview</title>
@@ -20,29 +16,23 @@
     <style>
         :root {
             --jaune: #ffd900;
-            --jaune-clair: #fff7c7;
             --noir: #111111;
-            --gris-fonce: #292929;
-            --gris: #6b6b6b;
+            --gris: #686868;
             --gris-clair: #f5f5f5;
             --blanc: #ffffff;
-            --ombre: 0 15px 40px rgba(0, 0, 0, 0.10);
+            --ombre: 0 18px 45px rgba(0, 0, 0, 0.1);
         }
 
         * {
             box-sizing: border-box;
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
-
         body {
             margin: 0;
             font-family: Arial, Helvetica, sans-serif;
-            background: var(--blanc);
             color: var(--noir);
-            line-height: 1.6;
+            background: var(--blanc);
+            line-height: 1.7;
         }
 
         a {
@@ -50,138 +40,77 @@
             text-decoration: none;
         }
 
-        img {
-            max-width: 100%;
-            display: block;
-        }
-
         .container-nous {
-            width: min(1120px, 90%);
+            width: min(1100px, 90%);
             margin: auto;
         }
 
-        /* En-tête */
-
         .header-nous {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            background: rgba(17, 17, 17, 0.96);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            background: var(--noir);
+            color: var(--blanc);
         }
 
         .navigation-nous {
-            min-height: 74px;
+            min-height: 75px;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            gap: 25px;
+            gap: 30px;
         }
 
         .logo-nous {
-            font-size: 1.55rem;
+            font-size: 1.6rem;
             font-weight: 900;
-            color: var(--blanc);
-            letter-spacing: -1px;
         }
 
         .logo-nous span {
             color: var(--jaune);
         }
 
-        .liens-navigation-nous {
+        .navigation-nous nav {
             display: flex;
-            align-items: center;
-            gap: 24px;
+            gap: 25px;
         }
 
-        .liens-navigation-nous a {
-            color: #eeeeee;
-            font-size: 0.95rem;
+        .navigation-nous nav a {
+            color: #e3e3e3;
             font-weight: 600;
-            transition: 0.2s ease;
         }
 
-        .liens-navigation-nous a:hover {
+        .navigation-nous nav a:hover {
             color: var(--jaune);
         }
 
-        .bouton-navigation {
-            padding: 11px 18px;
-            border-radius: 10px;
-            background: var(--jaune);
-            color: var(--noir) !important;
-            font-weight: 800 !important;
-        }
-
-        /* Bannière */
-
         .hero-nous {
-            position: relative;
-            overflow: hidden;
-            padding: 110px 0 100px;
+            padding: 110px 0;
             background:
                 radial-gradient(
-                    circle at 80% 30%,
-                    rgba(255, 217, 0, 0.22),
+                    circle at 85% 20%,
+                    rgba(255, 217, 0, 0.2),
                     transparent 30%
                 ),
-                linear-gradient(135deg, #101010, #242424);
+                linear-gradient(135deg, #111111, #292929);
             color: var(--blanc);
         }
 
-        .hero-nous::before {
-            content: "";
-            position: absolute;
-            width: 310px;
-            height: 310px;
-            top: -120px;
-            right: -60px;
-            border-radius: 50%;
-            background: var(--jaune);
-            opacity: 0.08;
-        }
-
-        .hero-nous::after {
-            content: "";
-            position: absolute;
-            width: 230px;
-            height: 230px;
-            bottom: -130px;
-            left: -80px;
-            border-radius: 50%;
-            border: 45px solid var(--jaune);
-            opacity: 0.07;
-        }
-
-        .contenu-hero-nous {
-            position: relative;
-            z-index: 2;
-            max-width: 820px;
-        }
-
-        .etiquette-nous {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            margin-bottom: 22px;
+        .hero-nous .etiquette {
+            display: inline-block;
+            margin-bottom: 20px;
             padding: 8px 14px;
-            border: 1px solid rgba(255, 217, 0, 0.4);
-            border-radius: 999px;
-            background: rgba(255, 217, 0, 0.10);
+            border: 1px solid rgba(255, 217, 0, 0.5);
+            border-radius: 50px;
             color: var(--jaune);
-            font-size: 0.87rem;
+            font-size: 0.85rem;
             font-weight: 800;
             text-transform: uppercase;
-            letter-spacing: 0.7px;
+            letter-spacing: 1px;
         }
 
         .hero-nous h1 {
-            max-width: 760px;
-            margin: 0 0 22px;
-            font-size: clamp(2.6rem, 7vw, 5rem);
-            line-height: 1.02;
+            max-width: 850px;
+            margin: 0 0 25px;
+            font-size: clamp(2.7rem, 7vw, 5rem);
+            line-height: 1.05;
             letter-spacing: -3px;
         }
 
@@ -190,239 +119,104 @@
         }
 
         .hero-nous p {
-            max-width: 680px;
-            margin: 0 0 34px;
-            color: #d3d3d3;
+            max-width: 720px;
+            margin: 0;
+            color: #d0d0d0;
             font-size: 1.15rem;
         }
-
-        .actions-hero-nous {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 14px;
-        }
-
-        .btn-nous {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 50px;
-            padding: 12px 23px;
-            border-radius: 12px;
-            font-weight: 800;
-            transition: 0.25s ease;
-        }
-
-        .btn-principal-nous {
-            background: var(--jaune);
-            color: var(--noir);
-        }
-
-        .btn-principal-nous:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 30px rgba(255, 217, 0, 0.25);
-        }
-
-        .btn-secondaire-nous {
-            border: 1px solid rgba(255, 255, 255, 0.28);
-            color: var(--blanc);
-        }
-
-        .btn-secondaire-nous:hover {
-            border-color: var(--jaune);
-            color: var(--jaune);
-        }
-
-        /* Présentation */
 
         .section-nous {
             padding: 90px 0;
         }
 
-        .grille-presentation-nous {
+        .section-grise {
+            background: var(--gris-clair);
+        }
+
+        .presentation-nous {
             display: grid;
-            grid-template-columns: 1.05fr 0.95fr;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
             align-items: center;
-            gap: 65px;
         }
 
         .surtitre-nous {
             margin-bottom: 10px;
-            color: #9b8200;
-            font-size: 0.87rem;
+            color: #947c00;
+            font-size: 0.85rem;
             font-weight: 900;
             text-transform: uppercase;
             letter-spacing: 1.2px;
         }
 
-        .titre-section-nous {
+        .titre-nous {
             margin: 0 0 22px;
-            font-size: clamp(2rem, 4vw, 3.1rem);
-            line-height: 1.12;
-            letter-spacing: -1.7px;
+            font-size: clamp(2rem, 4vw, 3.2rem);
+            line-height: 1.15;
+            letter-spacing: -1.5px;
         }
 
-        .texte-presentation-nous p {
+        .texte-nous p {
             color: var(--gris);
-            font-size: 1.03rem;
+            font-size: 1.04rem;
         }
 
-        .carte-visuelle-nous {
-            position: relative;
-            min-height: 430px;
-            padding: 42px;
-            overflow: hidden;
+        .carte-fondateur {
+            padding: 45px;
             border-radius: 28px;
-            background:
-                linear-gradient(
-                    145deg,
-                    rgba(255, 217, 0, 0.96),
-                    rgba(255, 230, 86, 0.95)
-                );
+            background: var(--jaune);
             box-shadow: var(--ombre);
         }
 
-        .carte-visuelle-nous::after {
-            content: "";
-            position: absolute;
-            width: 260px;
-            height: 260px;
-            right: -110px;
-            bottom: -110px;
-            border-radius: 50%;
-            background: rgba(0, 0, 0, 0.08);
-        }
-
-        .carte-nfc-nous {
-            position: relative;
-            z-index: 2;
-            max-width: 340px;
-            margin: 45px auto 0;
-            padding: 34px 25px;
-            border-radius: 24px;
-            background: var(--noir);
-            color: var(--blanc);
-            text-align: center;
-            transform: rotate(-4deg);
-            box-shadow: 0 25px 45px rgba(0, 0, 0, 0.28);
-        }
-
-        .carte-nfc-nous .etoiles {
-            margin-bottom: 14px;
-            color: var(--jaune);
-            font-size: 1.55rem;
-            letter-spacing: 4px;
-        }
-
-        .carte-nfc-nous h3 {
-            margin: 0 0 10px;
-            font-size: 1.55rem;
-        }
-
-        .carte-nfc-nous p {
-            margin: 0 0 23px;
-            color: #cccccc;
-        }
-
-        .icone-nfc-nous {
+        .photo-fondateur {
             display: grid;
-            width: 67px;
-            height: 67px;
-            margin: auto;
+            width: 145px;
+            height: 145px;
+            margin-bottom: 25px;
             place-items: center;
             border-radius: 50%;
-            background: var(--jaune);
-            color: var(--noir);
-            font-size: 1.7rem;
+            background: var(--noir);
+            color: var(--jaune);
+            font-size: 3rem;
             font-weight: 900;
         }
 
-        /* Statistiques */
-
-        .section-statistiques-nous {
-            padding: 25px 0 90px;
+        .carte-fondateur h2 {
+            margin: 0 0 4px;
+            font-size: 2rem;
         }
 
-        .statistiques-nous {
+        .carte-fondateur .fonction {
+            margin: 0 0 20px;
+            font-weight: 800;
+        }
+
+        .carte-fondateur p {
+            margin: 0;
+            color: #292929;
+        }
+
+        .valeurs-nous {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            overflow: hidden;
-            border: 1px solid #e8e8e8;
-            border-radius: 22px;
-            background: var(--blanc);
-            box-shadow: var(--ombre);
-        }
-
-        .statistique-nous {
-            padding: 35px 25px;
-            text-align: center;
-        }
-
-        .statistique-nous:not(:last-child) {
-            border-right: 1px solid #e8e8e8;
-        }
-
-        .statistique-nous strong {
-            display: block;
-            margin-bottom: 6px;
-            font-size: 2.1rem;
-            font-weight: 900;
-        }
-
-        .statistique-nous span {
-            color: var(--gris);
-            font-size: 0.95rem;
-        }
-
-        /* Valeurs */
-
-        .section-valeurs-nous {
-            background: var(--gris-clair);
-        }
-
-        .entete-section-nous {
-            max-width: 700px;
-            margin: 0 auto 45px;
-            text-align: center;
-        }
-
-        .entete-section-nous p {
-            color: var(--gris);
-        }
-
-        .grille-valeurs-nous {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 22px;
+            gap: 24px;
+            margin-top: 45px;
         }
 
         .valeur-nous {
             padding: 32px;
-            border: 1px solid #e8e8e8;
             border-radius: 20px;
             background: var(--blanc);
-            transition: 0.25s ease;
-        }
-
-        .valeur-nous:hover {
-            transform: translateY(-6px);
             box-shadow: var(--ombre);
         }
 
-        .icone-valeur-nous {
-            display: grid;
-            width: 52px;
-            height: 52px;
-            margin-bottom: 22px;
-            place-items: center;
-            border-radius: 14px;
-            background: var(--jaune-clair);
-            font-size: 1.5rem;
+        .valeur-nous .icone {
+            margin-bottom: 18px;
+            font-size: 2rem;
         }
 
         .valeur-nous h3 {
             margin: 0 0 12px;
-            font-size: 1.25rem;
         }
 
         .valeur-nous p {
@@ -430,180 +224,65 @@
             color: var(--gris);
         }
 
-        /* Fonctionnement */
-
-        .grille-fonctionnement-nous {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 22px;
-            counter-reset: etape;
-        }
-
-        .etape-nous {
-            position: relative;
-            padding: 34px 28px;
-            border-radius: 20px;
-            background: var(--noir);
-            color: var(--blanc);
-            counter-increment: etape;
-        }
-
-        .etape-nous::before {
-            content: "0" counter(etape);
-            display: block;
-            margin-bottom: 27px;
-            color: var(--jaune);
-            font-size: 2.2rem;
-            font-weight: 900;
-        }
-
-        .etape-nous h3 {
-            margin: 0 0 12px;
-        }
-
-        .etape-nous p {
-            margin: 0;
-            color: #bdbdbd;
-        }
-
-        /* Zone d'appel à l'action */
-
-        .cta-nous {
-            padding: 85px 0;
-        }
-
-        .bloc-cta-nous {
-            padding: 60px;
-            overflow: hidden;
-            border-radius: 28px;
-            background:
-                radial-gradient(
-                    circle at 85% 20%,
-                    rgba(255, 217, 0, 0.18),
-                    transparent 30%
-                ),
-                var(--noir);
-            color: var(--blanc);
+        .bloc-vision {
+            max-width: 850px;
+            margin: auto;
             text-align: center;
         }
 
-        .bloc-cta-nous h2 {
-            max-width: 700px;
-            margin: 0 auto 18px;
-            font-size: clamp(2rem, 4vw, 3.1rem);
-            line-height: 1.12;
+        .bloc-vision p {
+            color: var(--gris);
+            font-size: 1.08rem;
         }
-
-        .bloc-cta-nous p {
-            max-width: 650px;
-            margin: 0 auto 30px;
-            color: #cfcfcf;
-        }
-
-        /* Pied de page */
 
         .footer-nous {
-            padding: 55px 0 25px;
+            padding: 45px 0 25px;
             background: #0d0d0d;
-            color: #d3d3d3;
-        }
-
-        .grille-footer-nous {
-            display: grid;
-            grid-template-columns: 1.3fr 1fr 1fr 1fr;
-            gap: 40px;
-            padding-bottom: 40px;
-        }
-
-        .footer-nous h3,
-        .footer-nous h4 {
-            margin-top: 0;
             color: var(--blanc);
+        }
+
+        .footer-contenu {
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+            padding-bottom: 30px;
+        }
+
+        .footer-nous h3 {
+            margin-top: 0;
         }
 
         .footer-nous h3 span {
             color: var(--jaune);
         }
 
-        .footer-nous p {
-            color: #a7a7a7;
-        }
-
+        .footer-nous p,
         .footer-nous a {
-            display: block;
-            width: fit-content;
-            margin-bottom: 10px;
-            color: #bfbfbf;
-            transition: 0.2s ease;
+            color: #a9a9a9;
         }
 
         .footer-nous a:hover {
             color: var(--jaune);
         }
 
-        .footer-bas-nous {
-            display: flex;
-            justify-content: space-between;
-            gap: 20px;
-            padding-top: 24px;
-            border-top: 1px solid #282828;
+        .footer-bas {
+            padding-top: 20px;
+            border-top: 1px solid #2b2b2b;
             color: #888888;
             font-size: 0.9rem;
         }
 
-        /* Responsive */
-
-        @media (max-width: 900px) {
-            .liens-navigation-nous {
+        @media (max-width: 800px) {
+            .navigation-nous nav {
                 display: none;
             }
 
-            .grille-presentation-nous,
-            .grille-footer-nous {
+            .presentation-nous,
+            .valeurs-nous {
                 grid-template-columns: 1fr;
             }
 
-            .grille-presentation-nous {
-                gap: 40px;
-            }
-
-            .grille-valeurs-nous,
-            .grille-fonctionnement-nous {
-                grid-template-columns: 1fr;
-            }
-
-            .carte-visuelle-nous {
-                min-height: 380px;
-            }
-        }
-
-        @media (max-width: 650px) {
-            .hero-nous {
-                padding: 80px 0 75px;
-            }
-
-            .hero-nous h1 {
-                letter-spacing: -2px;
-            }
-
-            .section-nous {
-                padding: 65px 0;
-            }
-
-            .statistiques-nous {
-                grid-template-columns: 1fr;
-            }
-
-            .statistique-nous:not(:last-child) {
-                border-right: none;
-                border-bottom: 1px solid #e8e8e8;
-            }
-
-            .bloc-cta-nous {
-                padding: 45px 24px;
-            }
-
-            .footer-bas-nous {
+            .footer-contenu {
                 flex-direction: column;
             }
         }
@@ -612,7 +291,6 @@
 
 <body>
 
-    <!-- En-tête -->
     <header class="header-nous">
         <div class="container-nous navigation-nous">
 
@@ -620,15 +298,11 @@
                 Tap<span>Review</span>
             </a>
 
-            <nav class="liens-navigation-nous">
+            <nav>
                 <a href="index.html">Accueil</a>
-                <a href="index.html#produits">Produits</a>
-                <a href="index.html#fonctionnement">Fonctionnement</a>
                 <a href="nous.html">À propos</a>
                 <a href="index.html#faq">FAQ</a>
-                <a href="index.html#contact" class="bouton-navigation">
-                    Nous contacter
-                </a>
+                <a href="index.html#contact">Contact</a>
             </nav>
 
         </div>
@@ -636,170 +310,131 @@
 
     <main>
 
-        <!-- Bannière principale -->
         <section class="hero-nous">
-            <div class="container-nous contenu-hero-nous">
+            <div class="container-nous">
 
-                <div class="etiquette-nous">
-                    Entreprise française
+                <div class="etiquette">
+                    À propos de TapReview
                 </div>
 
                 <h1>
-                    Derrière TapReview, une idée
-                    <span>simple et efficace.</span>
+                    Une entreprise créée avec
+                    <span>ambition et proximité.</span>
                 </h1>
 
                 <p>
-                    Nous aidons les professionnels à obtenir davantage d'avis
-                    Google grâce à des supports NFC et QR Code simples à utiliser,
-                    rapides à installer et adaptés à leur activité.
+                    TapReview est une jeune entreprise française créée avec la
+                    volonté d'accompagner les professionnels de manière simple,
+                    humaine et sérieuse.
                 </p>
-
-                <div class="actions-hero-nous">
-                    <a
-                        href="index.html#produits"
-                        class="btn-nous btn-principal-nous"
-                    >
-                        Découvrir nos produits
-                    </a>
-
-                    <a
-                        href="#notre-histoire"
-                        class="btn-nous btn-secondaire-nous"
-                    >
-                        En savoir plus
-                    </a>
-                </div>
 
             </div>
         </section>
 
-        <!-- Présentation -->
-        <section class="section-nous" id="notre-histoire">
-            <div class="container-nous grille-presentation-nous">
+        <section class="section-nous">
+            <div class="container-nous presentation-nous">
 
-                <div class="texte-presentation-nous">
+                <div class="texte-nous">
 
                     <div class="surtitre-nous">Notre histoire</div>
 
-                    <h2 class="titre-section-nous">
-                        Faciliter les avis Google pour les professionnels
+                    <h2 class="titre-nous">
+                        La naissance de TapReview
                     </h2>
 
                     <p>
-                        TapReview est né d'un constat simple : beaucoup de clients
-                        satisfaits souhaitent laisser un avis, mais ne prennent
-                        pas toujours le temps de rechercher l'établissement sur
-                        Google.
+                        TapReview est né de l'envie de créer une entreprise moderne,
+                        accessible et proche de ses clients.
                     </p>
 
                     <p>
-                        Nos supports NFC permettent de simplifier cette démarche.
-                        Le client approche son téléphone ou scanne le QR Code pour
-                        accéder directement à la page d'avis Google de
-                        l'établissement.
+                        Le projet a été lancé à Saint-Nazaire avec un objectif clair :
+                        construire une activité sérieuse, utile et capable d'évoluer
+                        dans le temps.
                     </p>
 
                     <p>
-                        Nous souhaitons proposer aux commerçants, artisans,
-                        restaurateurs, salons, garages et autres professionnels
-                        une solution accessible, moderne et facile à mettre en
-                        place.
+                        Depuis sa création, l'entreprise se développe progressivement
+                        autour de valeurs simples : l'écoute, la qualité du travail,
+                        la transparence et la satisfaction des clients.
                     </p>
 
                 </div>
 
-                <div class="carte-visuelle-nous">
+                <div class="carte-fondateur">
 
-                    <div class="carte-nfc-nous">
-                        <div class="etoiles">★★★★★</div>
-
-                        <h3>Votre avis compte</h3>
-
-                        <p>
-                            Approchez votre téléphone pour laisser un avis Google.
-                        </p>
-
-                        <div class="icone-nfc-nous">NFC</div>
+                    <div class="photo-fondateur">
+                        MH
                     </div>
 
+                    <h2>Melvyn Hougard</h2>
+
+                    <p class="fonction">
+                        Fondateur de TapReview
+                    </p>
+
+                    <p>
+                        Passionné par l'entrepreneuriat, le numérique et la création,
+                        j'ai créé TapReview avec l'envie de développer ma propre
+                        entreprise et de proposer un accompagnement professionnel,
+                        simple et humain.
+                    </p>
+
                 </div>
 
             </div>
         </section>
 
-        <!-- Statistiques -->
-        <section class="section-statistiques-nous">
-            <div class="container-nous statistiques-nous">
-
-                <div class="statistique-nous">
-                    <strong>1 geste</strong>
-                    <span>pour accéder aux avis Google</span>
-                </div>
-
-                <div class="statistique-nous">
-                    <strong>0 appli</strong>
-                    <span>à télécharger par le client</span>
-                </div>
-
-                <div class="statistique-nous">
-                    <strong>24 h</strong>
-                    <span>pour recevoir une réponse</span>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- Valeurs -->
-        <section class="section-nous section-valeurs-nous">
+        <section class="section-nous section-grise">
             <div class="container-nous">
 
-                <div class="entete-section-nous">
-                    <div class="surtitre-nous">Nos engagements</div>
+                <div class="bloc-vision">
+                    <div class="surtitre-nous">Notre identité</div>
 
-                    <h2 class="titre-section-nous">
-                        Les valeurs de TapReview
+                    <h2 class="titre-nous">
+                        Une entreprise à taille humaine
                     </h2>
 
                     <p>
-                        Nous privilégions des solutions utiles, simples à
-                        comprendre et adaptées aux besoins réels des
-                        professionnels.
+                        TapReview privilégie une relation directe avec chaque client.
+                        Derrière chaque échange, il n'y a pas une grande plateforme
+                        impersonnelle, mais une personne disponible qui suit les
+                        demandes et cherche à apporter une réponse adaptée.
                     </p>
                 </div>
 
-                <div class="grille-valeurs-nous">
+                <div class="valeurs-nous">
 
                     <article class="valeur-nous">
-                        <div class="icone-valeur-nous">⚡</div>
-
-                        <h3>Simplicité</h3>
-
-                        <p>
-                            Aucun abonnement ni application n'est nécessaire
-                            pour utiliser le support.
-                        </p>
-                    </article>
-
-                    <article class="valeur-nous">
-                        <div class="icone-valeur-nous">🎯</div>
-
-                        <h3>Efficacité</h3>
-
-                        <p>
-                            Le parcours du client est raccourci pour rendre le
-                            dépôt d'un avis plus rapide.
-                        </p>
-                    </article>
-
-                    <article class="valeur-nous">
-                        <div class="icone-valeur-nous">💬</div>
+                        <div class="icone">🤝</div>
 
                         <h3>Proximité</h3>
 
                         <p>
-                            TapReview reste disponible pour accompagner chaque
-                            client avant et après sa commande.
+                            Chaque client bénéficie d'un échange direct, clair et
+                            personnalisé.
+                        </p>
+                    </article>
+
+                    <article class="valeur-nous">
+                        <div class="icone">🛠️</div>
+
+                        <h3>Sérieux</h3>
+
+                        <p>
+                            Chaque demande est étudiée avec attention et réalisée
+                            avec soin.
+                        </p>
+                    </article>
+
+                    <article class="valeur-nous">
+                        <div class="icone">🚀</div>
+
+                        <h3>Ambition</h3>
+
+                        <p>
+                            TapReview souhaite grandir progressivement tout en
+                            conservant une relation humaine avec ses clients.
                         </p>
                     </article>
 
@@ -808,124 +443,58 @@
             </div>
         </section>
 
-        <!-- Fonctionnement -->
         <section class="section-nous">
-            <div class="container-nous">
+            <div class="container-nous bloc-vision">
 
-                <div class="entete-section-nous">
-                    <div class="surtitre-nous">Comment ça fonctionne ?</div>
+                <div class="surtitre-nous">Notre vision</div>
 
-                    <h2 class="titre-section-nous">
-                        Une mise en place en trois étapes
-                    </h2>
-                </div>
+                <h2 class="titre-nous">
+                    Construire une entreprise durable
+                </h2>
 
-                <div class="grille-fonctionnement-nous">
+                <p>
+                    L'objectif de TapReview est de se développer sur le long terme,
+                    de gagner la confiance de ses clients et de devenir une
+                    entreprise reconnue pour son sérieux, sa disponibilité et la
+                    qualité de son accompagnement.
+                </p>
 
-                    <article class="etape-nous">
-                        <h3>Vous choisissez votre support</h3>
-
-                        <p>
-                            Sélectionnez le modèle et la finition adaptés à votre
-                            établissement.
-                        </p>
-                    </article>
-
-                    <article class="etape-nous">
-                        <h3>Nous configurons le lien</h3>
-
-                        <p>
-                            Le support NFC et le QR Code sont associés à votre
-                            fiche d'établissement Google.
-                        </p>
-                    </article>
-
-                    <article class="etape-nous">
-                        <h3>Vos clients donnent leur avis</h3>
-
-                        <p>
-                            Ils approchent leur téléphone ou scannent le QR Code
-                            pour accéder à la page d'avis.
-                        </p>
-                    </article>
-
-                </div>
-
-            </div>
-        </section>
-
-        <!-- Appel à l'action -->
-        <section class="cta-nous">
-            <div class="container-nous">
-
-                <div class="bloc-cta-nous">
-                    <h2>
-                        Développez simplement votre visibilité sur Google
-                    </h2>
-
-                    <p>
-                        Découvrez les supports TapReview et facilitez la collecte
-                        d'avis auprès de vos clients satisfaits.
-                    </p>
-
-                    <a
-                        href="index.html#produits"
-                        class="btn-nous btn-principal-nous"
-                    >
-                        Voir les produits
-                    </a>
-                </div>
+                <p>
+                    L'entreprise souhaite continuer à évoluer sans perdre ce qui
+                    fait son identité : une structure accessible, locale et proche
+                    des professionnels.
+                </p>
 
             </div>
         </section>
 
     </main>
 
-    <!-- Pied de page -->
     <footer class="footer-nous">
         <div class="container-nous">
 
-            <div class="grille-footer-nous">
+            <div class="footer-contenu">
 
                 <div>
                     <h3>Tap<span>Review</span></h3>
 
                     <p>
-                        Des supports NFC et QR Code pour faciliter la collecte
-                        d'avis Google.
+                        Une entreprise française basée à Saint-Nazaire.
                     </p>
                 </div>
 
                 <div>
-                    <h4>Navigation</h4>
+                    <h3>Navigation</h3>
 
-                    <a href="index.html">Accueil</a>
-                    <a href="index.html#produits">Produits</a>
-                    <a href="index.html#fonctionnement">Fonctionnement</a>
-                    <a href="nous.html">À propos de nous</a>
-                </div>
-
-                <div>
-                    <h4>Informations</h4>
-
-                    <a href="index.html#faq">FAQ</a>
+                    <a href="index.html">Accueil</a><br>
+                    <a href="nous.html">À propos de nous</a><br>
                     <a href="index.html#contact">Contact</a>
-                    <a href="mentions-legales.html">Mentions légales</a>
-                    <a href="cgv.html">Conditions générales de vente</a>
-                </div>
-
-                <div>
-                    <h4>Contact</h4>
-
-                    <p>Saint-Nazaire et France entière</p>
-                    <p>Réponse rapide par e-mail</p>
                 </div>
 
             </div>
 
-            <div class="footer-bas-nous">
-                <span>© 2026 TapReview. Tous droits réservés.</span>
-                <span>Supports NFC pour avis clients</span>
+            <div class="footer-bas">
+                © 2026 TapReview. Tous droits réservés.
             </div>
 
         </div>
