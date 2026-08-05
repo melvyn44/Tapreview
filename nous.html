@@ -2,33 +2,45 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <meta
         name="description"
-        content="Découvrez l'histoire de TapReview, son fondateur et les valeurs de l'entreprise."
+        content="Découvrez TapReview, son histoire, ses valeurs et son fondateur."
     >
 
-    <title>À propos de nous | TapReview</title>
+    <title>À propos | TapReview</title>
 
     <link rel="stylesheet" href="style.css">
 
     <style>
         :root {
-            --jaune: #ffd900;
+            --jaune: #ffd800;
+            --jaune-clair: #fff4a8;
             --noir: #111111;
-            --gris: #686868;
+            --noir-clair: #1d1d1d;
+            --gris: #696969;
             --gris-clair: #f5f5f5;
             --blanc: #ffffff;
-            --ombre: 0 18px 45px rgba(0, 0, 0, 0.1);
+            --bordure: #e5e5e5;
+            --ombre: 0 20px 55px rgba(0, 0, 0, 0.10);
         }
 
         * {
+            margin: 0;
+            padding: 0;
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            margin: 0;
             font-family: Arial, Helvetica, sans-serif;
             color: var(--noir);
             background: var(--blanc);
@@ -40,249 +52,638 @@
             text-decoration: none;
         }
 
-        .container-nous {
-            width: min(1100px, 90%);
+        img {
+            display: block;
+            max-width: 100%;
+        }
+
+        .container {
+            width: min(1120px, 90%);
             margin: auto;
         }
 
-        .header-nous {
-            background: var(--noir);
-            color: var(--blanc);
+        /* HEADER */
+
+        .header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(17, 17, 17, 0.97);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(12px);
         }
 
-        .navigation-nous {
-            min-height: 75px;
+        .navigation {
+            min-height: 88px;
             display: flex;
             align-items: center;
             justify-content: space-between;
             gap: 30px;
         }
 
-        .logo-nous {
-            font-size: 1.6rem;
+        .logo {
+            font-size: 1.9rem;
             font-weight: 900;
+            color: var(--blanc);
+            letter-spacing: -1.5px;
         }
 
-        .logo-nous span {
+        .logo span {
             color: var(--jaune);
         }
 
-        .navigation-nous nav {
+        .menu {
             display: flex;
-            gap: 25px;
+            align-items: center;
+            gap: 30px;
         }
 
-        .navigation-nous nav a {
-            color: #e3e3e3;
-            font-weight: 600;
+        .menu a {
+            color: #eeeeee;
+            font-size: 1rem;
+            font-weight: 700;
+            transition: 0.2s ease;
         }
 
-        .navigation-nous nav a:hover {
+        .menu a:hover,
+        .menu a.active {
             color: var(--jaune);
         }
 
-        .hero-nous {
-            padding: 110px 0;
+        .menu .contact-btn {
+            padding: 13px 22px;
+            border-radius: 13px;
+            background: var(--jaune);
+            color: var(--noir);
+        }
+
+        .menu .contact-btn:hover {
+            color: var(--noir);
+            transform: translateY(-2px);
+        }
+
+        /* HERO */
+
+        .hero {
+            position: relative;
+            overflow: hidden;
+            padding: 120px 0 115px;
             background:
                 radial-gradient(
-                    circle at 85% 20%,
-                    rgba(255, 217, 0, 0.2),
-                    transparent 30%
+                    circle at 85% 25%,
+                    rgba(255, 216, 0, 0.22),
+                    transparent 28%
                 ),
-                linear-gradient(135deg, #111111, #292929);
+                linear-gradient(135deg, #101010, #242424);
             color: var(--blanc);
         }
 
-        .hero-nous .etiquette {
-            display: inline-block;
-            margin-bottom: 20px;
-            padding: 8px 14px;
-            border: 1px solid rgba(255, 217, 0, 0.5);
-            border-radius: 50px;
+        .hero::before {
+            content: "";
+            position: absolute;
+            width: 360px;
+            height: 360px;
+            top: -180px;
+            right: -90px;
+            border-radius: 50%;
+            background: var(--jaune);
+            opacity: 0.08;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            width: 260px;
+            height: 260px;
+            bottom: -150px;
+            left: -100px;
+            border: 48px solid var(--jaune);
+            border-radius: 50%;
+            opacity: 0.06;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 850px;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            margin-bottom: 24px;
+            padding: 8px 15px;
+            border: 1px solid rgba(255, 216, 0, 0.45);
+            border-radius: 999px;
+            background: rgba(255, 216, 0, 0.10);
             color: var(--jaune);
             font-size: 0.85rem;
-            font-weight: 800;
+            font-weight: 900;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
 
-        .hero-nous h1 {
-            max-width: 850px;
-            margin: 0 0 25px;
-            font-size: clamp(2.7rem, 7vw, 5rem);
-            line-height: 1.05;
-            letter-spacing: -3px;
+        .hero h1 {
+            max-width: 800px;
+            margin-bottom: 25px;
+            font-size: clamp(3rem, 7vw, 5.4rem);
+            line-height: 1.02;
+            letter-spacing: -4px;
         }
 
-        .hero-nous h1 span {
+        .hero h1 span {
             color: var(--jaune);
         }
 
-        .hero-nous p {
+        .hero p {
             max-width: 720px;
-            margin: 0;
             color: #d0d0d0;
-            font-size: 1.15rem;
+            font-size: 1.2rem;
         }
 
-        .section-nous {
-            padding: 90px 0;
+        /* SECTIONS */
+
+        .section {
+            padding: 100px 0;
         }
 
-        .section-grise {
+        .section-grey {
             background: var(--gris-clair);
         }
 
-        .presentation-nous {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
+        .section-dark {
+            background: var(--noir);
+            color: var(--blanc);
         }
 
-        .surtitre-nous {
+        .eyebrow {
             margin-bottom: 10px;
-            color: #947c00;
+            color: #9b8300;
             font-size: 0.85rem;
             font-weight: 900;
             text-transform: uppercase;
             letter-spacing: 1.2px;
         }
 
-        .titre-nous {
-            margin: 0 0 22px;
-            font-size: clamp(2rem, 4vw, 3.2rem);
-            line-height: 1.15;
-            letter-spacing: -1.5px;
+        .section-dark .eyebrow {
+            color: var(--jaune);
         }
 
-        .texte-nous p {
+        .section-title {
+            margin-bottom: 22px;
+            font-size: clamp(2.2rem, 4vw, 3.5rem);
+            line-height: 1.12;
+            letter-spacing: -2px;
+        }
+
+        .section-description {
             color: var(--gris);
-            font-size: 1.04rem;
+            font-size: 1.05rem;
         }
 
-        .carte-fondateur {
-            padding: 45px;
-            border-radius: 28px;
+        .section-dark .section-description {
+            color: #bdbdbd;
+        }
+
+        /* HISTOIRE */
+
+        .story-grid {
+            display: grid;
+            grid-template-columns: 1.05fr 0.95fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .story-text p {
+            margin-bottom: 18px;
+            color: var(--gris);
+            font-size: 1.05rem;
+        }
+
+        .story-card {
+            position: relative;
+            overflow: hidden;
+            min-height: 430px;
+            padding: 48px;
+            border-radius: 30px;
             background: var(--jaune);
             box-shadow: var(--ombre);
         }
 
-        .photo-fondateur {
-            display: grid;
-            width: 145px;
-            height: 145px;
-            margin-bottom: 25px;
-            place-items: center;
+        .story-card::after {
+            content: "";
+            position: absolute;
+            right: -110px;
+            bottom: -120px;
+            width: 280px;
+            height: 280px;
             border-radius: 50%;
+            background: rgba(0, 0, 0, 0.08);
+        }
+
+        .story-card-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .story-number {
+            display: grid;
+            width: 90px;
+            height: 90px;
+            margin-bottom: 35px;
+            place-items: center;
+            border-radius: 24px;
             background: var(--noir);
             color: var(--jaune);
-            font-size: 3rem;
+            font-size: 2rem;
             font-weight: 900;
         }
 
-        .carte-fondateur h2 {
-            margin: 0 0 4px;
-            font-size: 2rem;
+        .story-card h3 {
+            margin-bottom: 18px;
+            font-size: 2.2rem;
+            line-height: 1.15;
         }
 
-        .carte-fondateur .fonction {
-            margin: 0 0 20px;
-            font-weight: 800;
-        }
-
-        .carte-fondateur p {
-            margin: 0;
+        .story-card p {
             color: #292929;
+            font-size: 1.05rem;
         }
 
-        .valeurs-nous {
+        /* FONDATEUR */
+
+        .founder-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
-            margin-top: 45px;
+            grid-template-columns: 0.85fr 1.15fr;
+            gap: 70px;
+            align-items: center;
         }
 
-        .valeur-nous {
-            padding: 32px;
-            border-radius: 20px;
+        .founder-card {
+            padding: 45px;
+            border: 1px solid var(--bordure);
+            border-radius: 28px;
             background: var(--blanc);
             box-shadow: var(--ombre);
         }
 
-        .valeur-nous .icone {
-            margin-bottom: 18px;
+        .founder-photo {
+            display: grid;
+            width: 180px;
+            height: 180px;
+            margin-bottom: 28px;
+            place-items: center;
+            border-radius: 50%;
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--noir),
+                    #353535
+                );
+            color: var(--jaune);
+            font-size: 3.7rem;
+            font-weight: 900;
+            box-shadow: 0 18px 35px rgba(0, 0, 0, 0.20);
+        }
+
+        .founder-card h3 {
+            margin-bottom: 3px;
             font-size: 2rem;
         }
 
-        .valeur-nous h3 {
-            margin: 0 0 12px;
+        .founder-role {
+            margin-bottom: 20px;
+            color: #8c7600;
+            font-weight: 800;
         }
 
-        .valeur-nous p {
-            margin: 0;
+        .founder-card p {
             color: var(--gris);
         }
 
-        .bloc-vision {
-            max-width: 850px;
-            margin: auto;
+        .founder-text p {
+            margin-bottom: 18px;
+            color: var(--gris);
+            font-size: 1.05rem;
+        }
+
+        .quote {
+            margin-top: 30px;
+            padding: 24px 28px;
+            border-left: 5px solid var(--jaune);
+            border-radius: 0 16px 16px 0;
+            background: var(--gris-clair);
+            font-size: 1.08rem;
+            font-weight: 700;
+        }
+
+        /* VALEURS */
+
+        .section-heading {
+            max-width: 720px;
+            margin: 0 auto 50px;
             text-align: center;
         }
 
-        .bloc-vision p {
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 22px;
+        }
+
+        .value-card {
+            padding: 32px 28px;
+            border: 1px solid var(--bordure);
+            border-radius: 22px;
+            background: var(--blanc);
+            transition: 0.25s ease;
+        }
+
+        .value-card:hover {
+            transform: translateY(-7px);
+            box-shadow: var(--ombre);
+        }
+
+        .value-icon {
+            display: grid;
+            width: 58px;
+            height: 58px;
+            margin-bottom: 22px;
+            place-items: center;
+            border-radius: 16px;
+            background: var(--jaune-clair);
+            font-size: 1.7rem;
+        }
+
+        .value-card h3 {
+            margin-bottom: 12px;
+            font-size: 1.25rem;
+        }
+
+        .value-card p {
             color: var(--gris);
+        }
+
+        /* CHRONOLOGIE */
+
+        .timeline {
+            position: relative;
+            max-width: 900px;
+            margin: 55px auto 0;
+        }
+
+        .timeline::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 28px;
+            width: 3px;
+            background: var(--jaune);
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 85px;
+            margin-bottom: 45px;
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            top: 0;
+            left: 10px;
+            display: grid;
+            width: 40px;
+            height: 40px;
+            place-items: center;
+            border: 5px solid var(--noir);
+            border-radius: 50%;
+            background: var(--jaune);
+        }
+
+        .timeline-content {
+            padding: 26px 30px;
+            border: 1px solid #303030;
+            border-radius: 20px;
+            background: var(--noir-clair);
+        }
+
+        .timeline-content .date {
+            display: block;
+            margin-bottom: 7px;
+            color: var(--jaune);
+            font-size: 0.87rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .timeline-content h3 {
+            margin-bottom: 10px;
+            font-size: 1.35rem;
+        }
+
+        .timeline-content p {
+            color: #bdbdbd;
+        }
+
+        /* VISION */
+
+        .vision-box {
+            position: relative;
+            overflow: hidden;
+            padding: 70px;
+            border-radius: 32px;
+            background:
+                radial-gradient(
+                    circle at 90% 10%,
+                    rgba(255, 216, 0, 0.20),
+                    transparent 30%
+                ),
+                var(--noir);
+            color: var(--blanc);
+            text-align: center;
+        }
+
+        .vision-box::after {
+            content: "";
+            position: absolute;
+            width: 220px;
+            height: 220px;
+            right: -100px;
+            bottom: -110px;
+            border-radius: 50%;
+            background: var(--jaune);
+            opacity: 0.08;
+        }
+
+        .vision-box h2 {
+            position: relative;
+            z-index: 2;
+            max-width: 750px;
+            margin: 0 auto 22px;
+            font-size: clamp(2.2rem, 4vw, 3.5rem);
+            line-height: 1.12;
+        }
+
+        .vision-box p {
+            position: relative;
+            z-index: 2;
+            max-width: 760px;
+            margin: auto;
+            color: #c9c9c9;
             font-size: 1.08rem;
         }
 
-        .footer-nous {
-            padding: 45px 0 25px;
-            background: #0d0d0d;
+        /* FOOTER */
+
+        .footer {
+            padding: 60px 0 25px;
+            background: #0c0c0c;
             color: var(--blanc);
         }
 
-        .footer-contenu {
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.4fr 1fr 1fr;
+            gap: 55px;
+            padding-bottom: 45px;
+        }
+
+        .footer h3,
+        .footer h4 {
+            margin-bottom: 18px;
+        }
+
+        .footer h3 {
+            font-size: 1.7rem;
+        }
+
+        .footer h3 span {
+            color: var(--jaune);
+        }
+
+        .footer p {
+            color: #9e9e9e;
+        }
+
+        .footer a {
+            display: block;
+            width: fit-content;
+            margin-bottom: 11px;
+            color: #bdbdbd;
+            transition: 0.2s ease;
+        }
+
+        .footer a:hover {
+            color: var(--jaune);
+        }
+
+        .footer-bottom {
             display: flex;
             justify-content: space-between;
-            gap: 30px;
-            padding-bottom: 30px;
-        }
-
-        .footer-nous h3 {
-            margin-top: 0;
-        }
-
-        .footer-nous h3 span {
-            color: var(--jaune);
-        }
-
-        .footer-nous p,
-        .footer-nous a {
-            color: #a9a9a9;
-        }
-
-        .footer-nous a:hover {
-            color: var(--jaune);
-        }
-
-        .footer-bas {
-            padding-top: 20px;
-            border-top: 1px solid #2b2b2b;
-            color: #888888;
+            gap: 20px;
+            padding-top: 24px;
+            border-top: 1px solid #292929;
+            color: #808080;
             font-size: 0.9rem;
         }
 
+        /* RESPONSIVE */
+
+        @media (max-width: 1000px) {
+            .values-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .story-grid,
+            .founder-grid {
+                gap: 45px;
+            }
+        }
+
         @media (max-width: 800px) {
-            .navigation-nous nav {
+            .menu {
                 display: none;
             }
 
-            .presentation-nous,
-            .valeurs-nous {
+            .story-grid,
+            .founder-grid,
+            .footer-grid {
                 grid-template-columns: 1fr;
             }
 
-            .footer-contenu {
+            .founder-card {
+                order: 2;
+            }
+
+            .founder-text {
+                order: 1;
+            }
+
+            .vision-box {
+                padding: 50px 28px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .navigation {
+                min-height: 72px;
+            }
+
+            .logo {
+                font-size: 1.55rem;
+            }
+
+            .hero {
+                padding: 85px 0;
+            }
+
+            .hero h1 {
+                letter-spacing: -2.5px;
+            }
+
+            .section {
+                padding: 70px 0;
+            }
+
+            .values-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .story-card,
+            .founder-card {
+                padding: 32px 25px;
+            }
+
+            .founder-photo {
+                width: 135px;
+                height: 135px;
+                font-size: 2.8rem;
+            }
+
+            .timeline-item {
+                padding-left: 68px;
+            }
+
+            .timeline::before {
+                left: 20px;
+            }
+
+            .timeline-dot {
+                left: 2px;
+            }
+
+            .timeline-content {
+                padding: 23px;
+            }
+
+            .footer-bottom {
                 flex-direction: column;
             }
         }
@@ -291,18 +692,27 @@
 
 <body>
 
-    <header class="header-nous">
-        <div class="container-nous navigation-nous">
+    <!-- HEADER -->
+    <header class="header">
+        <div class="container navigation">
 
-            <a href="index.html" class="logo-nous">
+            <a href="index.html" class="logo">
                 Tap<span>Review</span>
             </a>
 
-            <nav>
+            <nav class="menu">
                 <a href="index.html">Accueil</a>
-                <a href="nous.html">À propos</a>
+                <a href="index.html#produits">Produits</a>
+                <a href="index.html#fonctionnement">Fonctionnement</a>
+                <a href="nous.html" class="active">À propos</a>
                 <a href="index.html#faq">FAQ</a>
-                <a href="index.html#contact">Contact</a>
+
+                <a
+                    href="index.html#contact"
+                    class="contact-btn"
+                >
+                    Nous contacter
+                </a>
             </nav>
 
         </div>
@@ -310,131 +720,212 @@
 
     <main>
 
-        <section class="hero-nous">
-            <div class="container-nous">
+        <!-- HERO -->
+        <section class="hero">
+            <div class="container hero-content">
 
-                <div class="etiquette">
+                <div class="badge">
                     À propos de TapReview
                 </div>
 
                 <h1>
-                    Une entreprise créée avec
-                    <span>ambition et proximité.</span>
+                    Une jeune entreprise créée avec
+                    <span>ambition.</span>
                 </h1>
 
                 <p>
-                    TapReview est une jeune entreprise française créée avec la
-                    volonté d'accompagner les professionnels de manière simple,
-                    humaine et sérieuse.
+                    Découvrez l'histoire de TapReview, les valeurs qui guident
+                    l'entreprise et la personne à l'origine du projet.
                 </p>
 
             </div>
         </section>
 
-        <section class="section-nous">
-            <div class="container-nous presentation-nous">
+        <!-- HISTOIRE -->
+        <section class="section">
+            <div class="container story-grid">
 
-                <div class="texte-nous">
+                <div class="story-text">
 
-                    <div class="surtitre-nous">Notre histoire</div>
+                    <div class="eyebrow">
+                        Notre histoire
+                    </div>
 
-                    <h2 class="titre-nous">
+                    <h2 class="section-title">
                         La naissance de TapReview
                     </h2>
 
                     <p>
-                        TapReview est né de l'envie de créer une entreprise moderne,
-                        accessible et proche de ses clients.
+                        TapReview est une jeune entreprise française créée à
+                        Saint-Nazaire avec l'envie de développer une activité
+                        moderne, sérieuse et proche de ses clients.
                     </p>
 
                     <p>
-                        Le projet a été lancé à Saint-Nazaire avec un objectif clair :
-                        construire une activité sérieuse, utile et capable d'évoluer
-                        dans le temps.
+                        Le projet est né d'une volonté d'entreprendre, de créer
+                        quelque chose de personnel et de construire une entreprise
+                        capable d'évoluer progressivement.
                     </p>
 
                     <p>
-                        Depuis sa création, l'entreprise se développe progressivement
-                        autour de valeurs simples : l'écoute, la qualité du travail,
-                        la transparence et la satisfaction des clients.
+                        Depuis sa création, TapReview se développe autour d'une
+                        vision simple : proposer un accompagnement humain, rester
+                        disponible et accorder une véritable importance à chaque
+                        client.
                     </p>
 
                 </div>
 
-                <div class="carte-fondateur">
+                <div class="story-card">
+                    <div class="story-card-content">
 
-                    <div class="photo-fondateur">
+                        <div class="story-number">
+                            2026
+                        </div>
+
+                        <h3>
+                            Le début d'une nouvelle aventure
+                        </h3>
+
+                        <p>
+                            TapReview représente avant tout un projet
+                            entrepreneurial construit avec motivation, créativité
+                            et l'envie de progresser chaque jour.
+                        </p>
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- FONDATEUR -->
+        <section class="section section-grey">
+            <div class="container founder-grid">
+
+                <article class="founder-card">
+
+                    <div class="founder-photo">
                         MH
                     </div>
 
-                    <h2>Melvyn Hougard</h2>
+                    <h3>Melvyn Hougard</h3>
 
-                    <p class="fonction">
+                    <p class="founder-role">
                         Fondateur de TapReview
                     </p>
 
                     <p>
-                        Passionné par l'entrepreneuriat, le numérique et la création,
-                        j'ai créé TapReview avec l'envie de développer ma propre
-                        entreprise et de proposer un accompagnement professionnel,
-                        simple et humain.
+                        Entrepreneur à l'origine du projet TapReview et responsable
+                        du développement de l'entreprise.
                     </p>
+
+                </article>
+
+                <div class="founder-text">
+
+                    <div class="eyebrow">
+                        Le fondateur
+                    </div>
+
+                    <h2 class="section-title">
+                        Une entreprise portée par une personne
+                    </h2>
+
+                    <p>
+                        J'ai créé TapReview avec l'envie de lancer ma propre
+                        entreprise et de construire un projet concret, moderne et
+                        durable.
+                    </p>
+
+                    <p>
+                        Je m'occupe personnellement du développement de
+                        l'entreprise, des échanges avec les clients, de la
+                        conception du site internet et de l'évolution du projet.
+                    </p>
+
+                    <p>
+                        Cette implication directe me permet de rester proche des
+                        personnes qui font confiance à TapReview et de proposer
+                        un accompagnement plus humain.
+                    </p>
+
+                    <div class="quote">
+                        « Mon objectif est de faire grandir TapReview sans perdre
+                        la proximité, le sérieux et l'attention accordée à chaque
+                        client. »
+                    </div>
 
                 </div>
 
             </div>
         </section>
 
-        <section class="section-nous section-grise">
-            <div class="container-nous">
+        <!-- VALEURS -->
+        <section class="section">
+            <div class="container">
 
-                <div class="bloc-vision">
-                    <div class="surtitre-nous">Notre identité</div>
+                <div class="section-heading">
 
-                    <h2 class="titre-nous">
-                        Une entreprise à taille humaine
+                    <div class="eyebrow">
+                        Nos valeurs
+                    </div>
+
+                    <h2 class="section-title">
+                        Ce qui définit TapReview
                     </h2>
 
-                    <p>
-                        TapReview privilégie une relation directe avec chaque client.
-                        Derrière chaque échange, il n'y a pas une grande plateforme
-                        impersonnelle, mais une personne disponible qui suit les
-                        demandes et cherche à apporter une réponse adaptée.
+                    <p class="section-description">
+                        L'entreprise se construit autour de principes simples,
+                        essentiels pour créer une relation durable et digne de
+                        confiance.
                     </p>
+
                 </div>
 
-                <div class="valeurs-nous">
+                <div class="values-grid">
 
-                    <article class="valeur-nous">
-                        <div class="icone">🤝</div>
+                    <article class="value-card">
+                        <div class="value-icon">🤝</div>
 
                         <h3>Proximité</h3>
 
                         <p>
-                            Chaque client bénéficie d'un échange direct, clair et
-                            personnalisé.
+                            Une relation directe, simple et humaine avec chaque
+                            client.
                         </p>
                     </article>
 
-                    <article class="valeur-nous">
-                        <div class="icone">🛠️</div>
+                    <article class="value-card">
+                        <div class="value-icon">⭐</div>
 
-                        <h3>Sérieux</h3>
+                        <h3>Qualité</h3>
 
                         <p>
-                            Chaque demande est étudiée avec attention et réalisée
-                            avec soin.
+                            Une attention particulière est accordée à chaque
+                            détail et à chaque demande.
                         </p>
                     </article>
 
-                    <article class="valeur-nous">
-                        <div class="icone">🚀</div>
+                    <article class="value-card">
+                        <div class="value-icon">🔒</div>
+
+                        <h3>Confiance</h3>
+
+                        <p>
+                            La transparence et le respect des engagements sont au
+                            cœur de l'entreprise.
+                        </p>
+                    </article>
+
+                    <article class="value-card">
+                        <div class="value-icon">🚀</div>
 
                         <h3>Ambition</h3>
 
                         <p>
-                            TapReview souhaite grandir progressivement tout en
-                            conservant une relation humaine avec ses clients.
+                            La volonté de progresser, d'apprendre et de faire
+                            évoluer TapReview dans le temps.
                         </p>
                     </article>
 
@@ -443,58 +934,170 @@
             </div>
         </section>
 
-        <section class="section-nous">
-            <div class="container-nous bloc-vision">
+        <!-- CHRONOLOGIE -->
+        <section class="section section-dark">
+            <div class="container">
 
-                <div class="surtitre-nous">Notre vision</div>
+                <div class="section-heading">
 
-                <h2 class="titre-nous">
-                    Construire une entreprise durable
-                </h2>
+                    <div class="eyebrow">
+                        Notre évolution
+                    </div>
 
-                <p>
-                    L'objectif de TapReview est de se développer sur le long terme,
-                    de gagner la confiance de ses clients et de devenir une
-                    entreprise reconnue pour son sérieux, sa disponibilité et la
-                    qualité de son accompagnement.
-                </p>
+                    <h2 class="section-title">
+                        Les premières étapes de TapReview
+                    </h2>
 
-                <p>
-                    L'entreprise souhaite continuer à évoluer sans perdre ce qui
-                    fait son identité : une structure accessible, locale et proche
-                    des professionnels.
-                </p>
+                    <p class="section-description">
+                        Une entreprise qui se construit progressivement, étape
+                        après étape.
+                    </p>
+
+                </div>
+
+                <div class="timeline">
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+
+                        <div class="timeline-content">
+                            <span class="date">Création</span>
+
+                            <h3>Naissance de l'idée</h3>
+
+                            <p>
+                                Réflexion autour du projet, du nom de l'entreprise,
+                                de son identité et de son positionnement.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+
+                        <div class="timeline-content">
+                            <span class="date">Développement</span>
+
+                            <h3>Création de l'identité TapReview</h3>
+
+                            <p>
+                                Mise en place du logo, des couleurs, des supports
+                                visuels et de l'image de l'entreprise.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+
+                        <div class="timeline-content">
+                            <span class="date">Mise en ligne</span>
+
+                            <h3>Création du site internet</h3>
+
+                            <p>
+                                Développement d'un site permettant de présenter
+                                TapReview et de faciliter les échanges avec les
+                                professionnels.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+
+                        <div class="timeline-content">
+                            <span class="date">Avenir</span>
+
+                            <h3>Développement de l'entreprise</h3>
+
+                            <p>
+                                L'objectif est de faire connaître TapReview,
+                                d'accompagner davantage de clients et de continuer
+                                à améliorer l'entreprise.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- VISION -->
+        <section class="section">
+            <div class="container">
+
+                <div class="vision-box">
+
+                    <h2>
+                        Construire une entreprise durable et reconnue
+                    </h2>
+
+                    <p>
+                        L'ambition de TapReview est de continuer à progresser,
+                        de gagner la confiance de ses clients et de devenir une
+                        entreprise reconnue pour son sérieux, sa disponibilité
+                        et son approche humaine.
+                    </p>
+
+                </div>
 
             </div>
         </section>
 
     </main>
 
-    <footer class="footer-nous">
-        <div class="container-nous">
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
 
-            <div class="footer-contenu">
+            <div class="footer-grid">
 
                 <div>
                     <h3>Tap<span>Review</span></h3>
 
                     <p>
-                        Une entreprise française basée à Saint-Nazaire.
+                        Une jeune entreprise française basée à Saint-Nazaire,
+                        créée avec ambition, sérieux et proximité.
                     </p>
                 </div>
 
                 <div>
-                    <h3>Navigation</h3>
+                    <h4>Navigation</h4>
 
-                    <a href="index.html">Accueil</a><br>
-                    <a href="nous.html">À propos de nous</a><br>
+                    <a href="index.html">Accueil</a>
+                    <a href="nous.html">À propos de nous</a>
+                    <a href="index.html#faq">FAQ</a>
                     <a href="index.html#contact">Contact</a>
+                </div>
+
+                <div>
+                    <h4>Informations</h4>
+
+                    <a href="mentions-legales.html">
+                        Mentions légales
+                    </a>
+
+                    <a href="confidentialite.html">
+                        Politique de confidentialité
+                    </a>
+
+                    <a href="cgv.html">
+                        Conditions générales de vente
+                    </a>
                 </div>
 
             </div>
 
-            <div class="footer-bas">
-                © 2026 TapReview. Tous droits réservés.
+            <div class="footer-bottom">
+                <span>
+                    © 2026 TapReview. Tous droits réservés.
+                </span>
+
+                <span>
+                    Entreprise française basée à Saint-Nazaire
+                </span>
             </div>
 
         </div>
