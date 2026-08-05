@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Mentions légales du site TapReview."
+    >
+
+    <title>Mentions légales | TapReview</title>
+
+    <style>
+        :root {
+            --jaune: #ffd800;
+            --jaune-clair: #fff6bd;
+            --noir: #111111;
+            --noir-clair: #1c1c1c;
+            --gris: #666666;
+            --gris-clair: #f5f5f5;
+            --blanc: #ffffff;
+            --bordure: #e4e4e4;
+            --ombre: 0 18px 45px rgba(0, 0, 0, 0.09);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            color: var(--noir);
+            background: var(--gris-clair);
+            line-height: 1.7;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .container {
+            width: min(1050px, 90%);
+            margin: auto;
+        }
+
+        /* HEADER */
+
+        .header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(17, 17, 17, 0.97);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(12px);
+        }
+
+        .navigation {
+            min-height: 88px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .logo {
+            color: var(--blanc);
+            font-size: 1.9rem;
+            font-weight: 900;
+            letter-spacing: -1.5px;
+        }
+
+        .logo span {
+            color: var(--jaune);
+        }
+
+        .menu {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+        }
+
+        .menu a {
+            color: #eeeeee;
+            font-weight: 700;
+            transition: 0.2s ease;
+        }
+
+        .menu a:hover {
+            color: var(--jaune);
+        }
+
+        .menu .contact-button {
+            padding: 13px 21px;
+            border-radius: 13px;
+            background: var(--jaune);
+            color: var(--noir);
+        }
+
+        /* HERO */
+
+        .hero {
+            position: relative;
+            overflow: hidden;
+            padding: 95px 0;
+            background:
+                radial-gradient(
+                    circle at 85% 20%,
+                    rgba(255, 216, 0, 0.22),
+                    transparent 30%
+                ),
+                linear-gradient(135deg, #101010, #252525);
+            color: var(--blanc);
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            right: -100px;
+            bottom: -160px;
+            border-radius: 50%;
+            background: var(--jaune);
+            opacity: 0.07;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+        }
+
+        .badge {
+            display: inline-block;
+            margin-bottom: 20px;
+            padding: 8px 14px;
+            border: 1px solid rgba(255, 216, 0, 0.45);
+            border-radius: 999px;
+            background: rgba(255, 216, 0, 0.10);
+            color: var(--jaune);
+            font-size: 0.84rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .hero h1 {
+            margin-bottom: 20px;
+            font-size: clamp(2.8rem, 7vw, 5rem);
+            line-height: 1.04;
+            letter-spacing: -3px;
+        }
+
+        .hero h1 span {
+            color: var(--jaune);
+        }
+
+        .hero p {
+            max-width: 690px;
+            color: #cecece;
+            font-size: 1.12rem;
+        }
+
+        /* SOMMAIRE */
+
+        .legal-wrapper {
+            padding: 70px 0 100px;
+        }
+
+        .summary {
+            margin-bottom: 30px;
+            padding: 30px;
+            border: 1px solid var(--bordure);
+            border-radius: 22px;
+            background: var(--blanc);
+            box-shadow: var(--ombre);
+        }
+
+        .summary h2 {
+            margin-bottom: 18px;
+            font-size: 1.45rem;
+        }
+
+        .summary-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .summary-links a {
+            padding: 9px 14px;
+            border-radius: 10px;
+            background: var(--jaune-clair);
+            font-size: 0.92rem;
+            font-weight: 700;
+            transition: 0.2s ease;
+        }
+
+        .summary-links a:hover {
+            background: var(--jaune);
+        }
+
+        /* CONTENU LÉGAL */
+
+        .legal-content {
+            padding: 55px;
+            border: 1px solid var(--bordure);
+            border-radius: 26px;
+            background: var(--blanc);
+            box-shadow: var(--ombre);
+        }
+
+        .legal-section {
+            padding: 35px 0;
+            border-bottom: 1px solid var(--bordure);
+        }
+
+        .legal-section:first-child {
+            padding-top: 0;
+        }
+
+        .legal-section:last-child {
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .section-number {
+            display: grid;
+            width: 42px;
+            height: 42px;
+            margin-bottom: 16px;
+            place-items: center;
+            border-radius: 12px;
+            background: var(--jaune);
+            font-weight: 900;
+        }
+
+        .legal-section h2 {
+            margin-bottom: 16px;
+            font-size: 1.65rem;
+            line-height: 1.25;
+        }
+
+        .legal-section h3 {
+            margin: 22px 0 8px;
+            font-size: 1.1rem;
+        }
+
+        .legal-section p {
+            margin-bottom: 12px;
+            color: var(--gris);
+        }
+
+        .legal-section p:last-child {
+            margin-bottom: 0;
+        }
+
+        .info-box {
+            margin-top: 20px;
+            padding: 23px;
+            border-left: 5px solid var(--jaune);
+            border-radius: 0 14px 14px 0;
+            background: var(--gris-clair);
+        }
+
+        .info-box p {
+            margin-bottom: 7px;
+        }
+
+        .info-box strong {
+            color: var(--noir);
+        }
+
+        .placeholder {
+            color: #a00000;
+            font-weight: 800;
+        }
+
+        .email-link {
+            color: #786500;
+            font-weight: 800;
+            overflow-wrap: anywhere;
+        }
+
+        .warning {
+            margin-bottom: 30px;
+            padding: 22px 25px;
+            border: 1px solid #e3c100;
+            border-radius: 16px;
+            background: #fff9d8;
+        }
+
+        .warning strong {
+            display: block;
+            margin-bottom: 6px;
+        }
+
+        /* FOOTER */
+
+        .footer {
+            padding: 60px 0 25px;
+            background: #0c0c0c;
+            color: var(--blanc);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.4fr 1fr 1fr;
+            gap: 50px;
+            padding-bottom: 45px;
+        }
+
+        .footer h3,
+        .footer h4 {
+            margin-bottom: 17px;
+        }
+
+        .footer h3 {
+            font-size: 1.7rem;
+        }
+
+        .footer h3 span {
+            color: var(--jaune);
+        }
+
+        .footer p {
+            color: #9e9e9e;
+        }
+
+        .footer a {
+            display: block;
+            width: fit-content;
+            margin-bottom: 10px;
+            color: #bbbbbb;
+        }
+
+        .footer a:hover {
+            color: var(--jaune);
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            padding-top: 24px;
+            border-top: 1px solid #292929;
+            color: #808080;
+            font-size: 0.9rem;
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 800px) {
+            .menu {
+                display: none;
+            }
+
+            .legal-content {
+                padding: 35px 25px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .navigation {
+                min-height: 72px;
+            }
+
+            .logo {
+                font-size: 1.55rem;
+            }
+
+            .hero {
+                padding: 75px 0;
+            }
+
+            .hero h1 {
+                letter-spacing: -2px;
+            }
+
+            .legal-wrapper {
+                padding: 45px 0 70px;
+            }
+
+            .summary {
+                padding: 24px;
+            }
+
+            .legal-content {
+                padding: 30px 20px;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="container navigation">
+
+            <a href="index.html" class="logo">
+                Tap<span>Review</span>
+            </a>
+
+            <nav class="menu">
+                <a href="index.html">Accueil</a>
+                <a href="index.html#produits">Produits</a>
+                <a href="index.html#fonctionnement">Fonctionnement</a>
+                <a href="nous.html">À propos</a>
+                <a href="index.html#faq">FAQ</a>
+
+                <a
+                    href="index.html#contact"
+                    class="contact-button"
+                >
+                    Nous contacter
+                </a>
+            </nav>
+
+        </div>
+    </header>
+
+    <main>
+
+        <!-- HERO -->
+        <section class="hero">
+            <div class="container hero-content">
+
+                <div class="badge">
+                    Informations juridiques
+                </div>
+
+                <h1>
+                    Mentions <span>légales</span>
+                </h1>
+
+                <p>
+                    Retrouvez les informations relatives à l’éditeur,
+                    au responsable de publication et à l’hébergement du
+                    site internet TapReview.
+                </p>
+
+            </div>
+        </section>
+
+        <!-- CONTENU -->
+        <section class="legal-wrapper">
+            <div class="container">
+
+                <div class="warning">
+                    <strong>À compléter avant la publication</strong>
+
+                    Remplace toutes les informations écrites en rouge par les
+                    renseignements officiels de ton entreprise et de ton
+                    hébergeur.
+                </div>
+
+                <div class="summary">
+                    <h2>Sommaire</h2>
+
+                    <div class="summary-links">
+                        <a href="#editeur">Éditeur du site</a>
+                        <a href="#publication">Publication</a>
+                        <a href="#hebergement">Hébergement</a>
+                        <a href="#propriete">Propriété intellectuelle</a>
+                        <a href="#responsabilite">Responsabilité</a>
+                        <a href="#liens">Liens externes</a>
+                        <a href="#donnees">Données personnelles</a>
+                        <a href="#droit">Droit applicable</a>
+                    </div>
+                </div>
+
+                <div class="legal-content">
+
+                    <!-- ÉDITEUR -->
+                    <section class="legal-section" id="editeur">
+
+                        <div class="section-number">1</div>
+
+                        <h2>Éditeur du site</h2>
+
+                        <p>
+                            Le site internet accessible à l’adresse
+                            <strong>tapreview26.fr</strong> est édité par :
+                        </p>
+
+                        <div class="info-box">
+                            <p>
+                                <strong>Nom commercial :</strong>
+                                TapReview
+                            </p>
+
+                            <p>
+                                <strong>Entrepreneur :</strong>
+                                Melvyn Hougard,
+                                <span class="placeholder">
+                                    Entrepreneur individuel / EI
+                                </span>
+                            </p>
+
+                            <p>
+                                <strong>Adresse professionnelle :</strong>
+                                <span class="placeholder">
+                                    [ADRESSE COMPLÈTE À AJOUTER]
+                                </span>
+                            </p>
+
+                            <p>
+                                <strong>Numéro SIREN ou SIRET :</strong>
+                                <span class="placeholder">
+                                    [NUMÉRO À AJOUTER]
+                                </span>
+                            </p>
+
+                            <p>
+                                <strong>Immatriculation :</strong>
+                                <span class="placeholder">
+                                    [RCS SAINT-NAZAIRE + NUMÉRO,
+                                    SI APPLICABLE]
+                                </span>
+                            </p>
+
+                            <p>
+                                <strong>Numéro de TVA intracommunautaire :</strong>
+                                <span class="placeholder">
+                                    [NUMÉRO DE TVA OU « TVA NON APPLICABLE,
+                                    ARTICLE 293 B DU CGI »]
+                                </span>
+                            </p>
+
+                            <p>
+                                <strong>Adresse électronique :</strong>
+
+                                <a
+                                    href="mailto:tapreview26@gmail.com"
+                                    class="email-link"
+                                >
+                                    tapreview26@gmail.com
+                                </a>
+                            </p>
+
+                            <p>
+                                <strong>Téléphone :</strong>
+                                <span class="placeholder">
+                                    [NUMÉRO DE TÉLÉPHONE À AJOUTER]
+                                </span>
+                            </p>
+                        </div>
+
+                    </section>
+
+                    <!-- RESPONSABLE DE PUBLICATION -->
+                    <section class="legal-section" id="publication">
+
+                        <div class="section-number">2</div>
+
+                        <h2>Responsable de la publication</h2>
+
+                        <p>
+                            Le directeur et responsable de la publication du
+                            site est :
+                        </p>
+
+                        <div class="info-box">
+                            <p>
+                                <strong>Melvyn Hougard</strong>,
+                                fondateur de TapReview.
+                            </p>
+
+                            <p>
+                                Contact :
+                                <a
+                                    href="mailto:tapreview26@gmail.com"
+                                    class="email-link"
+                                >
+                                    tapreview26@gmail.com
+                                </a>
+                            </p>
+                        </div>
+
+                    </section>
+
+                    <!-- HÉBERGEMENT -->
+                    <section class="legal-section" id="hebergement">
+
+                        <div class="section-number">3</div>
+
+                        <h2>Hébergement du site</h2>
+
+                        <p>
+                            Le site TapReview est hébergé par :
+                        </p>
+
+                        <div class="info-box">
+                            <p>
+                                <strong>Hébergeur :</strong>
+                                GitHub, Inc.
+                            </p>
+
+                            <p>
+                                <strong>Service utilisé :</strong>
+                                GitHub Pages
+                            </p>
+
+                            <p>
+                                <strong>Adresse :</strong>
+                                88 Colin P. Kelly Jr. Street,
+                                San Francisco, CA 94107,
+                                États-Unis
+                            </p>
+
+                            <p>
+                                <strong>Téléphone :</strong>
+                                +1 877 448 4820
+                            </p>
+
+                            <p>
+                                <strong>Site :</strong>
+                                github.com
+                            </p>
+                        </div>
+
+                    </section>
+
+                    <!-- PROPRIÉTÉ INTELLECTUELLE -->
+                    <section class="legal-section" id="propriete">
+
+                        <div class="section-number">4</div>
+
+                        <h2>Propriété intellectuelle</h2>
+
+                        <p>
+                            L’ensemble des éléments présents sur le site
+                            TapReview, notamment les textes, graphismes,
+                            illustrations, images, photographies, logos,
+                            vidéos, éléments visuels, structure et code,
+                            est protégé par le droit de la propriété
+                            intellectuelle.
+                        </p>
+
+                        <p>
+                            Sauf indication contraire, ces éléments sont la
+                            propriété exclusive de TapReview ou sont utilisés
+                            avec l’autorisation de leurs titulaires respectifs.
+                        </p>
+
+                        <p>
+                            Toute reproduction, représentation, modification,
+                            publication, adaptation ou exploitation totale ou
+                            partielle du contenu du site, quel que soit le
+                            procédé employé, est interdite sans l’autorisation
+                            écrite préalable de TapReview.
+                        </p>
+
+                    </section>
+
+                    <!-- RESPONSABILITÉ -->
+                    <section class="legal-section" id="responsabilite">
+
+                        <div class="section-number">5</div>
+
+                        <h2>Limitation de responsabilité</h2>
+
+                        <p>
+                            TapReview s’efforce de fournir sur ce site des
+                            informations exactes, actualisées et accessibles.
+                            Toutefois, aucune garantie absolue ne peut être
+                            apportée concernant l’exactitude, l’exhaustivité ou
+                            l’actualité des informations publiées.
+                        </p>
+
+                        <p>
+                            TapReview ne pourra être tenu responsable des
+                            dommages directs ou indirects résultant de
+                            l’utilisation du site, de l’impossibilité d’y
+                            accéder ou d’une interruption temporaire de son
+                            fonctionnement.
+                        </p>
+
+                        <p>
+                            L’utilisateur demeure responsable de son matériel,
+                            de sa connexion internet et de l’usage qu’il fait
+                            des informations disponibles sur le site.
+                        </p>
+
+                    </section>
+
+                    <!-- LIENS EXTERNES -->
+                    <section class="legal-section" id="liens">
+
+                        <div class="section-number">6</div>
+
+                        <h2>Liens externes</h2>
+
+                        <p>
+                            Le site peut contenir des liens renvoyant vers des
+                            sites ou services exploités par des tiers.
+                        </p>
+
+                        <p>
+                            TapReview ne contrôle pas ces sites et ne peut être
+                            tenu responsable de leur contenu, de leur
+                            disponibilité, de leurs pratiques commerciales ou
+                            de leur politique de protection des données.
+                        </p>
+
+                    </section>
+
+                    <!-- DONNÉES PERSONNELLES -->
+                    <section class="legal-section" id="donnees">
+
+                        <div class="section-number">7</div>
+
+                        <h2>Données personnelles</h2>
+
+                        <p>
+                            Lorsque l’utilisateur contacte TapReview au moyen
+                            d’un formulaire ou par courrier électronique,
+                            certaines données personnelles peuvent être
+                            collectées, notamment son nom, son adresse
+                            électronique, son numéro de téléphone et le contenu
+                            de son message.
+                        </p>
+
+                        <p>
+                            Ces données sont utilisées uniquement pour traiter
+                            la demande, répondre à l’utilisateur et assurer le
+                            suivi de la relation commerciale éventuelle.
+                        </p>
+
+                        <p>
+                            Pour connaître les finalités précises, les bases
+                            légales, les durées de conservation et les droits
+                            applicables, l’utilisateur est invité à consulter
+                            la
+                            <a
+                                href="confidentialite.html"
+                                class="email-link"
+                            >
+                                politique de confidentialité
+                            </a>.
+                        </p>
+
+                        <p>
+                            Toute demande relative aux données personnelles
+                            peut être adressée à :
+                            <a
+                                href="mailto:tapreview26@gmail.com"
+                                class="email-link"
+                            >
+                                tapreview26@gmail.com
+                            </a>.
+                        </p>
+
+                    </section>
+
+                    <!-- DROIT APPLICABLE -->
+                    <section class="legal-section" id="droit">
+
+                        <div class="section-number">8</div>
+
+                        <h2>Droit applicable</h2>
+
+                        <p>
+                            Les présentes mentions légales sont régies par le
+                            droit français.
+                        </p>
+
+                        <p>
+                            En cas de difficulté, les parties rechercheront
+                            prioritairement une solution amiable avant toute
+                            procédure judiciaire, sous réserve des règles
+                            impératives relatives à la compétence des
+                            juridictions.
+                        </p>
+
+                        <p>
+                            Dernière mise à jour :
+                            <strong>5 août 2026</strong>.
+                        </p>
+
+                    </section>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+
+            <div class="footer-grid">
+
+                <div>
+                    <h3>Tap<span>Review</span></h3>
+
+                    <p>
+                        Une jeune entreprise française basée à Saint-Nazaire,
+                        créée avec ambition, sérieux et proximité.
+                    </p>
+                </div>
+
+                <div>
+                    <h4>Navigation</h4>
+
+                    <a href="index.html">Accueil</a>
+                    <a href="nous.html">À propos de nous</a>
+                    <a href="index.html#faq">FAQ</a>
+                    <a href="index.html#contact">Contact</a>
+                </div>
+
+                <div>
+                    <h4>Informations</h4>
+
+                    <a href="mentions-legales.html">
+                        Mentions légales
+                    </a>
+
+                    <a href="confidentialite.html">
+                        Politique de confidentialité
+                    </a>
+
+                    <a href="cgv.html">
+                        Conditions générales de vente
+                    </a>
+                </div>
+
+            </div>
+
+            <div class="footer-bottom">
+                <span>
+                    © 2026 TapReview. Tous droits réservés.
+                </span>
+
+                <span>
+                    Entreprise française basée à Saint-Nazaire
+                </span>
+            </div>
+
+        </div>
+    </footer>
+
+</body>
+</html>
